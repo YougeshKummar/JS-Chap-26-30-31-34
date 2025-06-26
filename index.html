@@ -6,7 +6,212 @@
     <title>chap 26-30</title>
 </head>
 <body>
+
+<!-- Event -->
+<!-- Q1 -->
+ <!-- 1. Show an alert box on click on a link. -->
+
+<a href="#" onclick="showAlert()">Click me!</a>
+
+<script>
+  function showAlert() {
+    alert("You clicked the link!");
+  }
+</script>
+
+<br>
+<br>
+<br>
+
+<!-- Q2 -->
+   <!-- 2. Display some Mobile images in browser. On click on an
+ image Show the message in alert to user. -->
+
+<img src="images/iphone1.jpg" alt="IPHONE 16 PRO" onclick="showAlert('IPHONE 16 PRO')" />
+<img src="images/Iphone2.jpg" alt="IPHONE 15 PRO" onclick="showAlert('IPHONE 15 PRO')" />
+<img src="images/mobile spark 30 pro.webp" alt="TECNO SPARK 30 PRO" onclick="showAlert('Mobile 3')"/ height="220px">
+
+<script>
+     function showAlert(mobileName) {
+    alert("You clicked on " + mobileName);
+  }
+</script>
+
+<br>
+<br>
+<!-- Q3 -->
+<!--   3. Display 10 student records in table and each row should contain a delete
+ button. If you click on a button to delete a record, entire row should be deleted. -->
+
+<h2>Student Records</h2>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Roll No</th>
+      <th>Name</th>
+      <th>Class</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="studentTable">
+    <tr>
+        <td>1</td>
+        <td>Ali</td>
+        <td>10</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Fatima</td>
+        <td>9</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Ahmed</td>
+        <td>10</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Zainab</td>
+        <td>8</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Hassan</td>
+        <td>9</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Sara</td>
+        <td>10</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Usman</td>
+        <td>8</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Ayesha</td>
+        <td>9</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Bilal</td>
+        <td>10</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Nida</td>
+        <td>8</td>
+        <td>
+            <button onclick="deleteRow(this)">Delete</button>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  function deleteRow(button) {
+    button.parentNode.parentNode.remove();
+  }
+</script>
+
+
+<!-- Q4 -->
+
+<!-- 4. Display an image in browser. Change the picture on mouseover and set the
+first picture on mouseout. -->
+
+
+<h2>Hover over the image to change it</h2>
+
+<img 
+  src="images/t-shirt.jpg" 
+  alt="Image" 
+  id="myImage"
+  onmouseover="changeImage()" 
+  onmouseout="resetImage()" 
+/>
+
+<script>
+  function changeImage() {
+    document.getElementById("myImage").src = "images/t-shirt green.jpg";
+  }
+
+  function resetImage() {
+    document.getElementById("myImage").src = "images/t-shirt.jpg";
+  }
+</script>
+
+
+<!-- Q5 -->
+
+<!-- 5. Show a counter in browser. Counter should increase on click on increase
+button and decrease on click on decrease button. And show updated counter
+value in browser. -->
+
+
+<h2>Counter Example</h2>
+
+<p>Counter Value: <span id="counter">0</span></p>
+
+<button onclick="increaseCounter()">Increase</button>
+<button onclick="decreaseCounter()">Decrease</button>
+
+<script>
+  let count = 0;
+
+  function increaseCounter() {
+    count++;
+    document.getElementById("counter").textContent = count;
+  }
+
+  function decreaseCounter() {
+    count--;
+    document.getElementById("counter").textContent = count;
+  }
+</script>
+
+
+
+
+
+
+
+
+
     <script src="math methods.js"></script>
     <script src="Date methods.js"></script>
+    <script src="function.js"></script>
+    <script src="loops.js"></script>
+    <script src="Events.js"></script>
 </body>
 </html>
